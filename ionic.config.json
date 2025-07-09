@@ -1,0 +1,7 @@
+{
+  "name": "Vibra",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
