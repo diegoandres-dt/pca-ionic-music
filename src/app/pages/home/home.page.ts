@@ -1,18 +1,19 @@
 import { Component } from '@angular/core';
-import {IonicModule} from '@ionic/angular';
+import { IonicModule } from '@ionic/angular';
 import { CommonModule } from '@angular/common';
 import { addIcons } from 'ionicons';
-import { library, playCircle, radio, search } from 'ionicons/icons';
+import { library, playCircle,search } from 'ionicons/icons';
+import { MiSliderComponent } from 'src/app/components/mi-slider/mi-slider.component';
 
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
-  imports: [IonicModule,CommonModule],
+  imports: [IonicModule,CommonModule,MiSliderComponent],
 })
 export class HomePage {
   constructor() {
-     addIcons({ library, playCircle, radio, search });
+     addIcons({ library, playCircle,search });
   }
 }

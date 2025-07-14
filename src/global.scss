@@ -42,3 +42,14 @@
   justify-content: center;
   height: 100%;
 }
+
+.fondo-negro {
+  --background: var(--ion-color-darkblack);
+  --color: var( --ion-color-white);
+}
+
+.tabs-negros {
+  --background: var(--ion-color-darkblack);
+  --color: var(--ion-color-darkblack-contrast); /* íconos/texto normales */
+  --color-selected: #ffffff; /* ícono/texto activo */
+}
