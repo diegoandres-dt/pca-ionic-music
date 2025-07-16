@@ -1,24 +1,13 @@
 <ion-header>
   <ion-toolbar class="fondo-negro">
     <ion-title>Diego de la Torre</ion-title>
-    <ion-button id="popover-button" slot="end" >Open Menu</ion-button>
+    <ion-button fill="clear" id="popover-button" slot="end" ><ion-icon name="ellipsis-vertical"></ion-icon></ion-button>
     <ion-popover trigger="popover-button" [dismissOnSelect]="true">
       <ng-template>
         <ion-content>
           <ion-list>
-            <ion-item [button]="true" [detail]="false">Option 1</ion-item>
-            <ion-item [button]="true" [detail]="false">Option 2</ion-item>
-            <ion-item [button]="true" id="nested-trigger">More options...</ion-item>
-
-            <ion-popover trigger="nested-trigger" [dismissOnSelect]="true" side="end">
-              <ng-template>
-                <ion-content>
-                  <ion-list>
-                    <ion-item [button]="true" [detail]="false">Nested option</ion-item>
-                  </ion-list>
-                </ion-content>
-              </ng-template>
-            </ion-popover>
+            <ion-item (click)="sendIntro()" [button]="true" [detail]="false">Ir a la Intro</ion-item>
+            <ion-item (click)="toggleDarkMode()" [button]="true" [detail]="false">{{tipoModo}}</ion-item>
           </ion-list>
         </ion-content>
       </ng-template>
