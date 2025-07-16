@@ -1,10 +1,32 @@
 <ion-header>
   <ion-toolbar class="fondo-negro">
     <ion-title>Diego de la Torre</ion-title>
+    <ion-button id="popover-button" slot="end" >Open Menu</ion-button>
+    <ion-popover trigger="popover-button" [dismissOnSelect]="true">
+      <ng-template>
+        <ion-content>
+          <ion-list>
+            <ion-item [button]="true" [detail]="false">Option 1</ion-item>
+            <ion-item [button]="true" [detail]="false">Option 2</ion-item>
+            <ion-item [button]="true" id="nested-trigger">More options...</ion-item>
+
+            <ion-popover trigger="nested-trigger" [dismissOnSelect]="true" side="end">
+              <ng-template>
+                <ion-content>
+                  <ion-list>
+                    <ion-item [button]="true" [detail]="false">Nested option</ion-item>
+                  </ion-list>
+                </ion-content>
+              </ng-template>
+            </ion-popover>
+          </ion-list>
+        </ion-content>
+      </ng-template>
+    </ion-popover>
   </ion-toolbar>
 </ion-header>
 <ion-content>
- <div class="contenedor-principal">
+  <div class="contenedor-principal">
     <app-mi-slider></app-mi-slider>
   </div>
 </ion-content>

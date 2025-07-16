@@ -1,0 +1,26 @@
+<ion-content>
+  <swiper-container #swiperRef pagination="true" navigation="false" loop="false" space-between="2">
+    <swiper-slide *ngFor="let item of datosIntro; let i = index">
+      <div class="slide-content">
+        <div class="fondo-img" [ngStyle]="{ 'background-image': 'url(' + item.imagen_fondo + ')' }" *ngIf="i==0">
+          <h1 [innerHTML]="item.titulo"></h1>
+          <p>{{item.descripcion}}</p>
+          <div class="button-intro">
+            <ion-button fill="clear" (click)="sendHome()">Omitir Intro</ion-button>
+            <ion-button *ngIf="i!=datosIntro.length-1" (click)="siguiente()">Siguiente</ion-button>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="i!=0" class="fondo-sin-img">
+        <img [src]="item.imagen" class="img-intro">
+        <h2>{{item.titulo}}</h2>
+        <p>{{item.descripcion}}</p>
+        <div class="button-intro">
+          <ion-button fill="clear" (click)="sendHome()">Omitir Intro</ion-button>
+          <ion-button *ngIf="i!=datosIntro.length-1" (click)="siguiente()">Siguiente</ion-button>
+        </div>
+      </div>
+    </swiper-slide>
+    <!-- Agrega más slides aquí si lo necesitas -->
+  </swiper-container>
+</ion-content>

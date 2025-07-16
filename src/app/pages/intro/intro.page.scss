@@ -1,0 +1,112 @@
+.slide-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0;
+}
+
+.fondo-img {
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-color: var(--ion-color-bg-intro);
+}
+
+.fondo-img {
+    padding: 40px 30px 0 30px;
+    /* arriba, derecha, abajo, izquierda */
+}
+
+.fondo-img h1 {
+    font-size: 34px;
+    font-weight: bold;
+    margin: 0;
+    color: var(--ion-color-font-intro);
+}
+
+.fondo-img p {
+    font-size: 18px;
+    margin-top: 20px;
+    margin-bottom: 0;
+    color: var(--ion-color-font-intro);
+    line-height: 1.6;
+}
+
+swiper-container::part(pagination) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    bottom: 20px !important;
+}
+
+swiper-container::part(bullet) {
+    width: 30px;
+    /* largo de la barra */
+    height: 6px;
+    /* alto de la barra */
+    background-color: var(--ion-color-white);
+    /* barra inactiva */
+    border-radius: 2px;
+    transition: background-color 0.3s;
+    opacity: 1;
+}
+
+swiper-container::part(bullet-active) {
+    background-color: var(--ion-color-primary);
+    /* barra activa */
+    width: 30px;
+    /* largo de la barra */
+    height: 6px;
+    /* alto de la barra */
+    border-radius: 2px;
+}
+
+.fondo-sin-img {
+    background-color: var(--ion-color-bg-intro);
+    height: 100vh;
+    width: 100%;
+    padding:40px 36px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.img-intro{
+    height: 200px;
+    margin-bottom: 42px;
+    margin-top: 20px;
+}
+
+.fondo-sin-img h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+    color: var(--ion-color-font-intro);
+    text-align: center;
+    
+}
+
+.fondo-sin-img p {
+    font-size: 16px;
+    margin-top: 25px;
+    margin-bottom: 0;
+    color: var(--ion-color-font-intro);
+    line-height: 1.6;
+    text-align: center;
+}
+
+.button-intro{
+    position: absolute;
+    display: flex;
+    bottom: 40px;
+    width:100%;
+    padding: 0px 20px;
+    justify-content: space-between;
+    left: 0;
+}

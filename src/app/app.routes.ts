@@ -26,8 +26,12 @@ export const routes: Routes = [
     ],
   },
   {
-    path: '',
+    path: 'home',
     redirectTo: 'tabs/home',
     pathMatch: 'full',
+  },
+  {
+    path: '',
+    loadComponent: () => import('./pages/intro/intro.page').then( m => m.IntroPage)
   },
 ];

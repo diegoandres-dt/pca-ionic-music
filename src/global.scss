@@ -49,7 +49,11 @@
 }
 
 .tabs-negros {
-  --background: var(--ion-color-darkblack);
-  --color: var(--ion-color-darkblack-contrast); /* íconos/texto normales */
-  --color-selected: #ffffff; /* ícono/texto activo */
+  --background: var(--ion-color-tolbar-bg);
+  --color: var(--ion-color-tolbar-texto); /* íconos/texto normales */
+  --color-selected: var(--ion-color-primary); /* ícono/texto activo */
+}
+
+#background-content{
+  background-color: var(--ion-color-darkblack);
 }

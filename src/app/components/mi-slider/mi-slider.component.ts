@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {IonicModule} from '@ionic/angular';
+import { IonicModule } from '@ionic/angular';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 
@@ -9,43 +9,71 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
   selector: 'app-mi-slider',
   templateUrl: './mi-slider.component.html',
   styleUrls: ['./mi-slider.component.scss'],
-  imports: [CommonModule,IonicModule],
+  imports: [CommonModule, IonicModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class MiSliderComponent  implements OnInit {
+export class MiSliderComponent implements OnInit {
 
-   slideOpts = {
+  slideOpts = {
     initialSlide: 0,
     speed: 400,
     loop: true
   };
 
-  sliderItems = [
+   listaSlides = [
     {
-      titulo: 'Bienvenido a Vibra',
-      imagen: 'assets/img/vibra1.png',
-      texto1: 'Escucha música sin límites',
-      texto2: 'Explora nuevos géneros',
-      texto3: 'Disfruta en cualquier momento'
+      titulo: 'Popular Now',
+      imagen: '../../../assets/img/36.jpg',
+      descripcion: {
+        album: 'Blinding Lights',
+        artista: 'The Weeknd',
+        year: '2020'
+      }
     },
     {
-      titulo: 'Tus artistas favoritos',
-      imagen: 'assets/img/vibra2.png',
-      texto1: 'Playlist personalizadas',
-      texto2: 'Recomendaciones diarias',
-      texto3: 'Sin interrupciones'
+      titulo: 'Top Hit',
+      imagen: '../../../assets/img/37.jpg',
+      descripcion: {
+        album: 'Levitating',
+        artista: 'Dua Lipa',
+        year: '2021'
+      }
     },
     {
-      titulo: 'Modo nocturno activado',
-      imagen: 'assets/img/vibra3.png',
-      texto1: 'Diseño moderno y oscuro',
-      texto2: 'Ideal para escuchar de noche',
-      texto3: 'Visualiza ondas y ritmos'
+      titulo: 'Fresh Release',
+      imagen: '../../../assets/img/35.jpg',
+      descripcion: {
+        album: 'As It Was',
+        artista: 'Harry Styles',
+        year: '2022'
+      }
+    },
+    {
+      titulo: 'Classic Vibes',
+      imagen: '../../../assets/img/36.jpg',
+      descripcion: {
+        album: 'Bohemian Rhapsody',
+        artista: 'Queen',
+        year: '1975'
+      }
+    },
+    {
+      titulo: 'New Discovery',
+      imagen: '../../../assets/img/37.jpg',
+      descripcion: {
+        album: 'Heat Waves',
+        artista: 'Glass Animals',
+        year: '2021'
+      }
     }
   ];
-
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() { }
+
+  getColor(index: number): string {
+  const colores = ['#67343e', '#b3a20d', '#7283e6', '#4f5e83', '#8fca9aff'];
+  return colores[index % colores.length];
+}
 
 }
