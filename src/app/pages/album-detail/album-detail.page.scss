@@ -1,0 +1,62 @@
+.detail-content {
+    width: 100%;
+    padding: 10px 36px 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+img {
+    border-radius: 6px;
+}
+
+.datail-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    gap: 4px;
+}
+
+
+
+body.dark {
+    .titulo-label {
+        font-size: 16px;
+        font-weight: 500;
+        color: var(--ion-color-white);
+    }
+
+}
+
+body{
+    .titulo-label {
+        font-size: 16px;
+        font-weight: 500;
+        color: var(--ion-color-text-light);
+    }
+}
+
+.artista-label {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ion-color-primary);
+}
+
+.detalle-lavel {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--ion-color-text-subtitle);
+    text-transform: uppercase;
+}
+
+.button-detail {
+    display: flex;
+    gap: 16px;
+    /* Espacio entre los botones */
+    justify-content: center;
+    padding: 0px 20px;
+}
+
+.custom-button {    
+    width: 100%;
+}

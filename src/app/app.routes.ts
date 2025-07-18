@@ -19,6 +19,10 @@ export const routes: Routes = [
         loadComponent: () => import('./pages/library/library.page').then(m => m.LibraryPage)
       },
       {
+        path: 'album-detail',
+        loadComponent: () => import('./pages/album-detail/album-detail.page').then(m => m.AlbumDetailPage)
+      },
+      {
         path: '',
         redirectTo: 'tabs/home',
         pathMatch: 'full',
@@ -32,6 +36,7 @@ export const routes: Routes = [
   },
   {
     path: '',
-    loadComponent: () => import('./pages/intro/intro.page').then( m => m.IntroPage)
+    loadComponent: () => import('./pages/intro/intro.page').then(m => m.IntroPage)
   },
+
 ];

@@ -18,7 +18,7 @@ export class HomePage {
   isDarkMode = false;
 
   constructor(private router: Router) {
-    addIcons({ library, playCircle, search,ellipsisVertical });
+    addIcons({ library, playCircle, search, ellipsisVertical });
   }
   toggleDarkMode() {
     this.isDarkMode = !this.isDarkMode;
@@ -29,6 +29,10 @@ export class HomePage {
 
   sendIntro() {
     this.router.navigate(['/'])
+  }
+
+  sendDetail() {
+    this.router.navigate(['tabs/album-detail'])
   }
 
 }
