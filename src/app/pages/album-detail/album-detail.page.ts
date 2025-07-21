@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from "@ionic/angular";
 import { addIcons } from 'ionicons';
-import { heart, logoApple, settingsSharp, star, play, shuffle} from 'ionicons/icons';
+import { heart, logoApple, settingsSharp, star, play, shuffle, cloudDownloadOutline} from 'ionicons/icons';
 
 @Component({
   selector: 'app-album-detail',
@@ -15,7 +15,7 @@ import { heart, logoApple, settingsSharp, star, play, shuffle} from 'ionicons/ic
 export class AlbumDetailPage implements OnInit {
 
   constructor() {
-    addIcons({ heart, logoApple, settingsSharp, star, play, shuffle});
+    addIcons({ heart, logoApple, settingsSharp, star, play, shuffle, cloudDownloadOutline});
    }
 
   ngOnInit() {

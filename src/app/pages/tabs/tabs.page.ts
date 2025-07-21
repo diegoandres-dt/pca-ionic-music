@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonIcon, IonTabBar, IonTabButton, IonTabs} from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
-import { library, playCircle, radio, search } from 'ionicons/icons';
+import { library, playCircle, radio, searchOutline, playOutline, fileTrayFullOutline } from 'ionicons/icons';
 
 
 
@@ -18,7 +18,7 @@ export class TabsPage implements OnInit {
 
   constructor() {
 
-     addIcons({ library, playCircle, radio, search });
+     addIcons({ library, playCircle, radio, searchOutline, playOutline, fileTrayFullOutline });
    }
 
   ngOnInit() {

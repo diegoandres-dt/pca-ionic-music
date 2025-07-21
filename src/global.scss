@@ -47,7 +47,9 @@
 body.dark {
   --ion-background-color: var(--ion-color-darkblack);
   --ion-text-color: var(--ion-color-white);
+  --ion-item-border-color: var(--ion-color-white);
 
+  /* Cambia 'red' por el color que prefieras */
   .input-wrapper {
     color: var(--ion-color-white)
   }
@@ -63,6 +65,9 @@ body.dark {
     --color-selected: var(--ion-color-primary);
   }
 
+  .titulo-slider{
+    color: var(--ion-color-white) !important;
+  }
 
   ion-button.button-app-principal {
     --background: var(--ion-color-button-principal-bg-dark);
@@ -87,6 +92,11 @@ body {
     --color: var(--ion-color-text-light);
   }
 
+  ion-header{
+    -webkit-box-shadow:none !important;
+    box-shadow: none !important;
+  }
+
   .tabs-negros {
     --background: var(--ion-color-white);
     --color: var(--ion-color-text-tolbar-light);
@@ -100,7 +110,7 @@ body {
   }
 
   ion-button.button-app-principal {
-    --background: var(--ion-color-button-principal-bg-dark);
+    --background: rgb(77, 197, 145, 0.3);
     --color: var(--ion-color-primary);
     --border-radius: 12px;
     font-weight: 500;
@@ -110,5 +120,29 @@ body {
     align-items: center;
     justify-content: center;
     gap: 8px;
+    --box-shadow: none !important;
   }
 }
+
+ion-tab-bar{
+  ion-tab-button {
+    position: relative;
+    ion-icon {
+      z-index: 2;
+      font-size: 20px;
+    }
+    &.tab-selected::before {
+      content: '';
+      position: absolute;
+      top: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40px;
+      height: 40px;
+      background-color: rgb(77, 197, 145, 0.3);
+      border-radius: 50%;
+      z-index: 1;
+    }
+  }
+}
+
