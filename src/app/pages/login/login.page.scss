@@ -1,0 +1,59 @@
+.contenedor-principal-login{
+    background-color: var(--ion-color-font-intro);
+}
+
+.contenedor-secundario{
+    background-color: var(--ion-color-white);
+    padding: 30px;
+    border-radius: 10px 10px 0px 0px;
+    height: 100vh; 
+}
+
+.contenedor-text{
+    color: var(--ion-color-white);
+    padding: 30px;
+}
+
+.imput-login{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.img-logo-login{
+    width: 52px;
+}
+
+.titulo-del-logo-login{
+    margin-top: 10px;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.class-icono{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.titulo-del-login{
+    font-weight: 700;
+    font-size: 32px;
+}
+
+.sudtitulo-del-login{
+    font-weight: 400;
+    font-size: 12px;
+}
+
+.parrafo-del-login{
+    font-weight: 500;
+    font-size: 12px;
+}
+
+ion-label.imput-login{
+    height: 2px;
+    font-weight: 500;
+    font-size: 15px;
+    color: #6C7278;
+}

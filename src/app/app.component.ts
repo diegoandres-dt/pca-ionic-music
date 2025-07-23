@@ -18,7 +18,7 @@ export class AppComponent {
     console.log("hasSeenIntro", hasSeenIntro);
 
     if (hasSeenIntro === 'true') {
-      this.router.navigateByUrl('/home', { replaceUrl: true });
+      this.router.navigateByUrl('/login', { replaceUrl: true });
     } else {
       this.router.navigateByUrl('', { replaceUrl: true });
     }
