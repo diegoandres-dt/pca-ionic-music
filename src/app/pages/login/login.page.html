@@ -6,23 +6,41 @@
     </div>
     <h1 class="titulo-del-login">Empieza ahora</h1>
     <p class="sudtitulo-del-login">Crea una cuenta o inicia sesión para explorar la aplicación</p>
-    <p class="parrafo-del-login">¿No tienes una cuenta?</p>
+    <p class="parrafo-del-login">¿No tienes una cuenta? <span>Registrate</span></p>
   </div>
   <div class="contenedor-secundario">
-    <div class="imput-login">
-      <div>
-        <ion-label>Correo electrónico</ion-label>
-        <ion-input type="email" fill="outline" labelPlacement="floating" helperText="Enter a valid email"
-          errorText="Invalid email" ngModel email></ion-input>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="contenedor-imput-login">
+        <div class="contenido-input-correo">
+          <ion-label>Correo electrónico</ion-label>
+          <ion-input type="email" fill="outline" formControlName="email" labelPlacement="floating"
+            placeholder="Ingresar"></ion-input>
+          <div *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.invalid" class="error">
+            <small *ngIf="loginForm.get('email')?.errors?.['required']">El correo es obligatorio</small>
+            <small *ngIf="loginForm.get('email')?.errors?.['email']">Formato de correo no válido</small>
+          </div>
+        </div>
+        <div>
+          <ion-label>Contraseña</ion-label>
+          <ion-input type="password" label-placement="floating" formControlName="password" fill="outline"
+            placeholder="Ingresar">
+            <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+          </ion-input>
+          <div *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid" class="error">
+            <small *ngIf="loginForm.get('password')?.errors?.['required']">
+              La contraseña es obligatoria
+            </small>
+            <small *ngIf="loginForm.get('password')?.errors?.['minlength']">
+              La contraseña debe tener mínimo 6 caracteres
+            </small>
+          </div>
+
+        </div>
       </div>
-      <div>
-        <ion-label>Contraseña</ion-label>
-        <ion-input type="password" value="NeverGonnaGiveYouUp" label-placement="floating" fill="outline"
-          placeholder="Enter text">
-          <ion-input-password-toggle slot="end"></ion-input-password-toggle>
-        </ion-input>
-      </div>
-    </div>
-    <ion-button>holaaa</ion-button>
+      <ion-label class="label-recuperar-contraseña">Recuperar contraseña</ion-label>
+      <ion-button class="button-login" expand="block" type="submit" [disabled]="!loginForm.valid">Ingresar</ion-button>
+    </form>
   </div>
+  <ion-label class="terminos-login">Al registrarse, acepta los <span>Términos de servicio</span> y el <span>Acuerdo de
+      procesamiento de datos.</span></ion-label>
 </div>
