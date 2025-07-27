@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from "@ionic/angular";
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -16,10 +17,10 @@ export class LoginPage implements OnInit {
 
   loginForm!: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder,private router: Router ) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required, Validators.minLength(6)]
+      password: ['', [Validators.required, Validators.minLength(6)]]    
     });
   }
 
@@ -34,6 +35,10 @@ export class LoginPage implements OnInit {
       console.log('Formulario inválido');
       this.loginForm.markAllAsTouched(); // Muestra errores al usuario
     }
+  }
+
+  irAlRegistro(){
+    this.router.navigateByUrl('/registro', { replaceUrl: true });
   }
 
 }

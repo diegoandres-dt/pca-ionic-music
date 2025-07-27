@@ -1,0 +1,113 @@
+.contenedor-principal-registro {
+    background-color: var(--ion-color-font-intro);
+
+    .terminos-registro {
+        position: absolute;
+        bottom: 12px;
+        text-align: center;
+        margin: 0px 32px;
+        font-size: 12px;
+        font-weight: 200;
+        line-height: 1.4;
+        color: #6C7278;
+
+        span {
+            color: #444;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        span:hover {
+            opacity: 0.8;
+        }
+    }
+}
+
+.contenedor-secundario {
+    background-color: var(--ion-color-white);
+    padding: 24px;
+    border-radius: 10px 10px 0px 0px;
+    height: 100vh;
+
+
+    .button-registro {
+        margin-top: 40px;
+        height: 42px;
+    }
+
+}
+
+.contenedor-text {
+    color: var(--ion-color-white);
+    padding: 30px 24px 46px;
+    background-image: url('../../../assets/img/fondo_luz.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    .icon-atras-registro{
+        font-size: 24px;
+        cursor: pointer;
+    }
+    .icon-atras-registro:hover{
+        opacity: 0.6;
+    }
+
+}
+
+.contenedor-imput-registro {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+.titulo-del-registro {
+    font-weight: 700;
+    font-size: 32px;
+}
+
+.parrafo-del-registro {
+    font-weight: 500;
+    font-size: 12px;
+
+    span {
+        color: var(--ion-color-primary);
+        text-decoration: underline;
+        margin-left: 6px;
+        font-weight: 700;
+        cursor: pointer;
+    }
+
+    span:hover {
+        opacity: 0.5;
+    }
+}
+
+.contenedor-imput-registro {
+    ion-label {
+        font-weight: 500;
+        font-size: 12px;
+        color: #6C7278;
+    }
+
+    ion-input {
+        min-height: 40px !important;
+        margin-top: 4px;
+    }
+
+    ::ng-deep .native-wrapper {
+        height: 40px;
+    }
+
+    ::ng-deep .native-input {
+        height: 24px;
+        font-size: 14px;
+    }
+
+}
+
+.contenido-input-text{
+    display: flex;
+    gap: 15px;
+}

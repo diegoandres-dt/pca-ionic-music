@@ -9,15 +9,15 @@
         font-size: 12px;
         font-weight: 200;
         line-height: 1.4;
-        color:#6C7278;
+        color: #6C7278;
 
-        span{
+        span {
             color: #444;
             font-weight: 600;
             cursor: pointer;
         }
 
-        span:hover{
+        span:hover {
             opacity: 0.8;
         }
     }
@@ -53,6 +53,10 @@
 .contenedor-text {
     color: var(--ion-color-white);
     padding: 30px 24px 46px;
+    background-image: url('../../../assets/img/fondo_luz.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 
 }
 

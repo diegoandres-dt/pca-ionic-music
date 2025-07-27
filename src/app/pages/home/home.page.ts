@@ -6,20 +6,32 @@ import { library, playCircle, search } from 'ionicons/icons';
 import { MiSliderComponent } from 'src/app/components/mi-slider/mi-slider.component';
 import { Router } from '@angular/router';
 import { ellipsisVertical } from 'ionicons/icons';
+import { SliderArtistaComponent } from 'src/app/components/slider-artista/slider-artista.component';
+import { ArtistService } from 'src/app/services/artist.service';
+import { HttpClientModule } from '@angular/common/http'; 
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
-  imports: [IonicModule, CommonModule, MiSliderComponent],
+  imports: [IonicModule, CommonModule, MiSliderComponent,SliderArtistaComponent,HttpClientModule],
 })
 export class HomePage {
   tipoModo = 'Cambiar a modo Oscuro';
   isDarkMode = false;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private artistService:ArtistService) {
     addIcons({ library, playCircle, search, ellipsisVertical });
   }
+
+   ngOnInit() {
+    this.artistService.listarArtista().subscribe((data) => {
+      console.log(data);
+    });
+
+   }
+
+
   toggleDarkMode() {
     this.isDarkMode = !this.isDarkMode;
     this.tipoModo = this.isDarkMode ? 'Cambiar a modo Lithg' : 'Cambiar a modo Oscuro';

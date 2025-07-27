@@ -6,14 +6,14 @@
     </div>
     <h1 class="titulo-del-login">Empieza ahora</h1>
     <p class="sudtitulo-del-login">Crea una cuenta o inicia sesión para explorar la aplicación</p>
-    <p class="parrafo-del-login">¿No tienes una cuenta? <span>Registrate</span></p>
+    <p class="parrafo-del-login">¿No tienes una cuenta? <span (click)="irAlRegistro()">Registrate</span></p>
   </div>
   <div class="contenedor-secundario">
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
       <div class="contenedor-imput-login">
         <div class="contenido-input-correo">
           <ion-label>Correo electrónico</ion-label>
-          <ion-input type="email" fill="outline" formControlName="email" labelPlacement="floating"
+          <ion-input type="email" fill="outline" formControlName="email" labelPlacement="stacked"
             placeholder="Ingresar"></ion-input>
           <div *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.invalid" class="error">
             <small *ngIf="loginForm.get('email')?.errors?.['required']">El correo es obligatorio</small>
@@ -22,7 +22,7 @@
         </div>
         <div>
           <ion-label>Contraseña</ion-label>
-          <ion-input type="password" label-placement="floating" formControlName="password" fill="outline"
+          <ion-input type="password" labelPlacement="stacked" formControlName="password" fill="outline"
             placeholder="Ingresar">
             <ion-input-password-toggle slot="end"></ion-input-password-toggle>
           </ion-input>

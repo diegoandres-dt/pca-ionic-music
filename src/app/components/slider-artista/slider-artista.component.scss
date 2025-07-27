@@ -1,0 +1,39 @@
+.div-principal-artista {
+    position: relative;
+
+}
+
+.img-artista {}
+
+.contenido-opacidad {
+    position: absolute;
+    z-index: 99;
+    width: 100%;
+    bottom: 0px
+}
+
+.opacidad-img-artista {}
+
+.titulo-artista {
+    width: 100%;
+    font-size: 16px;
+    font-weight: 500;
+
+}
+
+.seguidores-artista {
+    width: 100%;
+    font-size: 16px;
+    font-weight: 200;
+}
+
+.contenido-texto-artista {
+    position: absolute;
+    z-index: 1000;
+    bottom: 0px;
+    display: flex;
+    flex-direction: column;
+    padding: 0px 14px 20px;
+    width: 100%;
+    gap: 4px;
+}
