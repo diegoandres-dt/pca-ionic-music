@@ -1,0 +1,19 @@
+<ion-footer class="reproductor-footer">
+  <div class="fondo-blur" [ngStyle]="{'background-image': 'url(' + imagen + ')'}"></div>
+
+  <div class="reproductor-container">
+    <img [src]="imagen" class="imagen-disco" />
+    <div class="info-cancion">
+      <div class="titulo-cancion">{{ cancion }}</div>
+      <div class="nombre-artista">{{ artista }}</div>
+    </div>
+    <ion-button fill="clear" (click)="togglePlayPause()">
+
+      <ion-icon *ngIf="!isPlaying" name="play" slot="icon-only"></ion-icon>
+
+      <ion-icon *ngIf="isPlaying" name='pause' slot="icon-only"></ion-icon>
+    </ion-button>
+  </div>
+
+  <ion-progress-bar [value]="progreso / 100" color="primary"></ion-progress-bar>
+</ion-footer>

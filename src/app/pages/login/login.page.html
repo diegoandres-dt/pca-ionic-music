@@ -38,9 +38,19 @@
         </div>
       </div>
       <ion-label class="label-recuperar-contraseña">Recuperar contraseña</ion-label>
-      <ion-button class="button-login" expand="block" type="submit" [disabled]="!loginForm.valid">Ingresar</ion-button>
+      <ion-button class="button-login" expand="block" type="submit" [disabled]="!loginForm.valid || isLoading">
+        <ng-container *ngIf="!isLoading; else loadingTpl">
+          Ingresar
+        </ng-container>
+        <ng-template #loadingTpl>
+          <ion-spinner name="crescent" color="light"></ion-spinner>
+        </ng-template>
+      </ion-button>
     </form>
   </div>
   <ion-label class="terminos-login">Al registrarse, acepta los <span>Términos de servicio</span> y el <span>Acuerdo de
       procesamiento de datos.</span></ion-label>
+  <app-snack-bar *ngIf="mostrarSnackBar" [icon]="iconSnack" [title]="tituloSnack" [message]="mensajeSnack"
+    [type]="tipoSnack">
+  </app-snack-bar>
 </div>

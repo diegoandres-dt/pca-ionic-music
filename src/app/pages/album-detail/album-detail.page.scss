@@ -28,7 +28,7 @@ body.dark {
 
 }
 
-body{
+body {
     .titulo-label {
         font-size: 16px;
         font-weight: 500;
@@ -52,41 +52,40 @@ body{
 .button-detail {
     display: flex;
     gap: 16px;
-    /* Espacio entre los botones */
     justify-content: center;
     padding: 0px 20px;
 }
 
-.custom-button {    
+.custom-button {
     width: 100%;
 }
 
 .track-list {
-  color: #fff;
+    color: #fff;
 }
 
 .track-number {
-  margin-right: 8px;
-  color: #aaa;
-  font-weight: 500;
+    margin-right: 8px;
+    color: #aaa;
+    font-weight: 500;
 }
 
 ion-icon {
-  color: var(--ion-color-primary);
-  font-size: 20px;
+    color: var(--ion-color-primary);
+    font-size: 20px;
 }
 
 .custom-item {
-  position: relative;
-  padding-bottom: 3px;
+    position: relative;
+    padding-bottom: 3px;
 }
 
 .custom-item::after {
-  content: '';
-  position: absolute;
-  left: 38px;
-  right:0; 
-  bottom: 0;
-  height: 1px;
-  background-color: #555;
+    content: '';
+    position: absolute;
+    left: 38px;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background-color: #555;
 }

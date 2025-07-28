@@ -17,7 +17,7 @@
         <ion-icon name="invert-mode-outline" class="icono-item"></ion-icon>
         <ion-label>{{tipoModo}}</ion-label>
       </ion-item>
-      <ion-item lines="none">
+      <ion-item lines="none" id="present-alert">
         <ion-icon name="exit-outline" class="icono-item"></ion-icon>
         <ion-label>Cerrar Sesión</ion-label>
       </ion-item>
@@ -31,32 +31,69 @@
       <ion-buttons slot="start">
         <ion-menu-button></ion-menu-button>
       </ion-buttons>
-      <ion-title>Diego de la Torre</ion-title>
-      <ion-button fill="clear" id="popover-button" slot="end"><ion-icon
-          name="ellipsis-vertical"></ion-icon></ion-button>
-      <ion-popover trigger="popover-button" [dismissOnSelect]="true">
-        <ng-template>
-          <ion-content>
-            <ion-list>
-              <ion-item (click)="sendIntro()" [button]="true" [detail]="false">Ir a la Intro</ion-item>
-              <ion-item (click)="toggleDarkMode()" [button]="true" [detail]="false">{{tipoModo}}</ion-item>
-            </ion-list>
-          </ion-content>
-        </ng-template>
-      </ion-popover>
+      <ion-title>Inicio</ion-title>
     </ion-toolbar>
   </ion-header>
   <ion-content>
     <div class="contenedor-principal">
-      <app-mi-slider [listaSlides]="objetoAlbum"></app-mi-slider>
-      <ion-button (click)="sendDetail()">Ir al detalle</ion-button>
+      <label class="subtitulo-inicio">Albunes</label>
+      <app-mi-slider (datosAlPadreSlider)="sendDetail($event)" [listaSlides]="objetoAlbum"></app-mi-slider>
+      <label class="subtitulo-inicio subtitulo-artista">Artistas</label>
       <app-slider-artista (datosAlPadre)="detalleArtista($event)"
         [listaSlidesArtista]="objetoArtista"></app-slider-artista>
-      <app-modal-info [infoArtista]="verArtista" (isModalOpenEmitter)="cerrarModal($event)"
-        *ngIf="isModalOpen"></app-modal-info>
-      <ion-button expand="block" (click)="abrirModal()">
-        Abrir Modal
-      </ion-button>
+      <ion-button id="open-modal" expand="block" style="display: none">Open</ion-button>
+      <ion-modal trigger="open-modal" (willDismiss)="onWillDismiss($event)">
+        <ng-template>
+          <ion-header>
+            <ion-toolbar>
+              <ion-buttons slot="start">
+                <ion-button (click)="cancel()">Cancelar</ion-button>
+              </ion-buttons>
+              <ion-title>Welcome</ion-title>
+            </ion-toolbar>
+          </ion-header>
+          <ion-content class="contenido-detalle-modal">
+            <div class="detail-content">
+              <div class="detail-img">
+                <img [src]="verArtista.image">
+              </div>
+              <div class="datail-text">
+                <ion-label class="titulo-label">{{verArtista.name}}</ion-label>
+                <ion-label class="artista-label">Popularidad: {{verArtista.popularity}}</ion-label>
+                <ion-label class="detalle-lavel">Seguidores: {{verArtista.followers}}</ion-label>
+              </div>
+            </div>
+            <div class="button-detail">
+              <ion-button class="button-app-principal custom-button">
+                <ion-icon slot="start" name="play"></ion-icon>
+                Play
+              </ion-button>
+              <ion-button class="button-app-principal custom-button">
+                <ion-icon slot="start" name="shuffle"></ion-icon>
+                Shuffle
+              </ion-button>
+            </div>
+            <ion-list class="track-list">
+              <ion-item class="custom-item" lines="none" *ngFor="let item of objetoDisco; let i = index">
+                <ion-label (click)="reproducirDisco(item)">
+                  <span class="track-number">{{i+1}}</span> {{item.name}}
+                </ion-label>
+                <ion-icon name="heart-outline" slot="end"></ion-icon>
+              </ion-item>
+            </ion-list>
+
+          </ion-content>
+        </ng-template>
+      </ion-modal>
+
     </div>
+    <ion-alert trigger="present-alert" [buttons]="alertButtons" [message]="'¿Cerrar la sesión de tu cuenta?'"
+      (didDismiss)="setResult($event)"></ion-alert>
   </ion-content>
+  <div class="footer-reproductor" *ngIf="reproductorActive.name!=''">
+    <app-reproductor-footer [cancion]="reproductorActive?.name" [artista]="verArtista?.name"
+      [imagen]="verArtista?.image"
+      [audioUrl]="'https://p.scdn.co/mp3-preview/139aec4c3e350d889e4f1108eb14654c3d70c376?cid=acf7d036236b416cb26f69ec691da301'">
+    </app-reproductor-footer>
+  </div>
 </div>

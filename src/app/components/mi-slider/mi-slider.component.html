@@ -1,9 +1,9 @@
 <div>
   <swiper-container slides-per-view="1.20" centered-slides="false" space-between="10" grab-cursor="true" loop="false">
-    <swiper-slide *ngFor="let item of listaSlides; let i = index" >
+    <swiper-slide *ngFor="let item of listaSlides; let i = index">
       <div class="div-principal">
         <ion-label class="titulo-slider">{{item.label}}</ion-label>
-        <div class="div-contenedor" [style.background]="getColor(i)">
+        <div class="div-contenedor" [style.background]="getColor(i)" (click)="enviarDatosSlider(item)">
           <div class="div-imagen">
             <img [src]="item.image" />
           </div>

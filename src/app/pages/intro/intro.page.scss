@@ -71,13 +71,13 @@ swiper-container::part(bullet-active) {
     background-color: var(--ion-color-bg-intro);
     height: 100vh;
     width: 100%;
-    padding:40px 36px;
+    padding: 40px 36px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.img-intro{
+.img-intro {
     height: 200px;
     margin-bottom: 42px;
     margin-top: 20px;
@@ -89,7 +89,7 @@ swiper-container::part(bullet-active) {
     margin: 0;
     color: var(--ion-color-font-intro);
     text-align: center;
-    
+
 }
 
 .fondo-sin-img p {
@@ -101,11 +101,11 @@ swiper-container::part(bullet-active) {
     text-align: center;
 }
 
-.button-intro{
+.button-intro {
     position: absolute;
     display: flex;
     bottom: 40px;
-    width:100%;
+    width: 100%;
     padding: 0px 20px;
     justify-content: space-between;
     left: 0;

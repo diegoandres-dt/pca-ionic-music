@@ -16,9 +16,13 @@ export class AppComponent {
   ngOnInit() {
     const hasSeenIntro = localStorage.getItem('intro');
     console.log("hasSeenIntro", hasSeenIntro);
-
     if (hasSeenIntro === 'true') {
-      this.router.navigateByUrl('/home', { replaceUrl: true });
+      const hasLogin = localStorage.getItem('login');
+      if (hasLogin === 'true') {
+        this.router.navigateByUrl('/home', { replaceUrl: true });
+      } else {
+        this.router.navigateByUrl('/login', { replaceUrl: true });
+      }
     } else {
       this.router.navigateByUrl('', { replaceUrl: true });
     }

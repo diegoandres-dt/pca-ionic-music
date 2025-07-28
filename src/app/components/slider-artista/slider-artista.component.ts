@@ -22,10 +22,10 @@ export class SliderArtistaComponent implements OnInit {
   ngOnInit() { }
   reemplazarImagenPorDefecto(event: Event) {
     const elemento = event.target as HTMLImageElement;
-    elemento.src = '../../../assets/img/placeholder.png'; // Ajusta la ruta si es necesario
+    elemento.src = '../../../assets/img/placeholder.png';
   }
-  enviarDatos(item:any) {
-    this.datosAlPadre.emit(item); // Dispara el evento y envía los datos
+  enviarDatos(item: any) {
+    this.datosAlPadre.emit(item);
   }
 
 }

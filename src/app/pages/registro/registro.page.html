@@ -16,10 +16,10 @@
             </div>
           </div>
           <div>
-            <ion-label>Apellido</ion-label>
+            <ion-label>Usuario</ion-label>
             <ion-input fill="outline" placeholder="Ingresar" formControlName="apellido"></ion-input>
             <div *ngIf="registroForm.get('apellido')?.touched && registroForm.get('apellido')?.invalid" class="error">
-              <small *ngIf="registroForm.get('apellido')?.errors?.['required']">El apellido es obligatorio</small>
+              <small *ngIf="registroForm.get('apellido')?.errors?.['required']">El usuario es obligatorio</small>
             </div>
           </div>
         </div>
@@ -47,11 +47,19 @@
 
         </div>
       </div>
-      <ion-button class="button-registro" expand="block" type="submit"
-        [disabled]="!registroForm.valid">Registrar</ion-button>
+      <ion-button class="button-registro" expand="block" type="submit" [disabled]="!registroForm.valid || isLoading">
+        <ng-container *ngIf="!isLoading; else loadingTpl">
+          Registrar
+        </ng-container>
+        <ng-template #loadingTpl>
+          <ion-spinner name="crescent" color="light"></ion-spinner>
+        </ng-template>
+      </ion-button>
     </form>
   </div>
   <ion-label class="terminos-registro">Al registrarse, acepta los <span>Términos de servicio</span> y el <span>Acuerdo
-      de
-      procesamiento de datos.</span></ion-label>
+      de procesamiento de datos.</span></ion-label>
+  <app-snack-bar *ngIf="mostrarSnackBar" [icon]="iconSnack" [title]="tituloSnack" [message]="mensajeSnack"
+    [type]="tipoSnack">
+  </app-snack-bar>
 </div>
