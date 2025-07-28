@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { IonLabel } from "@ionic/angular/standalone";
 import { IonicModule } from "@ionic/angular";
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
@@ -14,9 +14,8 @@ import { CommonModule } from '@angular/common';
 export class SliderArtistaComponent implements OnInit {
 
 
-  @Input() listaSlidesArtista: any[] = [
-
-  ];
+  @Input() listaSlidesArtista: any[] = [];
+  @Output() datosAlPadre = new EventEmitter<any>();
 
   constructor() { }
 
@@ -24,6 +23,9 @@ export class SliderArtistaComponent implements OnInit {
   reemplazarImagenPorDefecto(event: Event) {
     const elemento = event.target as HTMLImageElement;
     elemento.src = '../../../assets/img/placeholder.png'; // Ajusta la ruta si es necesario
+  }
+  enviarDatos(item:any) {
+    this.datosAlPadre.emit(item); // Dispara el evento y envía los datos
   }
 
 }

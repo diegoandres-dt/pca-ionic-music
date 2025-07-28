@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar class="fondo-negro">
     <ion-title>Diego de la Torre</ion-title>
-    <ion-button fill="clear" id="popover-button" slot="end" ><ion-icon name="ellipsis-vertical"></ion-icon></ion-button>
+    <ion-button fill="clear" id="popover-button" slot="end"><ion-icon name="ellipsis-vertical"></ion-icon></ion-button>
     <ion-popover trigger="popover-button" [dismissOnSelect]="true">
       <ng-template>
         <ion-content>
@@ -18,6 +18,10 @@
   <div class="contenedor-principal">
     <app-mi-slider [listaSlides]="objetoAlbum"></app-mi-slider>
     <ion-button (click)="sendDetail()">Ir al detalle</ion-button>
-    <app-slider-artista [listaSlidesArtista]="objetoArtista"></app-slider-artista>
+    <app-slider-artista (datosAlPadre)="detalleArtista($event)" [listaSlidesArtista]="objetoArtista"></app-slider-artista>
+    <app-modal-info [infoArtista]="verArtista" (isModalOpenEmitter)="cerrarModal($event)" *ngIf="isModalOpen"></app-modal-info>
+    <ion-button expand="block" (click)="abrirModal()">
+      Abrir Modal
+    </ion-button>
   </div>
 </ion-content>

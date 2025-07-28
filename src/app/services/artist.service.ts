@@ -12,4 +12,7 @@ export class ArtistService {
   public listarArtista(): Observable<any> {
     return this.gatewayServices.get<any>(`artists`);
   }
+  public verArtista(id:number): Observable<any> {
+    return this.gatewayServices.get<any>(`/artists/${id}`);
+  }
 }

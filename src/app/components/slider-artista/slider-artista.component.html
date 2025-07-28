@@ -2,7 +2,7 @@
 <div>
   <swiper-container slides-per-view="1.8" centered-slides="false" space-between="10" grab-cursor="true" loop="false">
     <swiper-slide *ngFor="let item of listaSlidesArtista; let i = index">
-      <div class="div-principal-artista">
+      <div (click)="enviarDatos(item)" class="div-principal-artista">
         <img class="img-artista" [src]="item.image"  (error)="reemplazarImagenPorDefecto($event)" alt="Artista">
         <div class="contenido-opacidad">
         <img class="opacidad-img-artista" src="./../../../assets/img/bg_artista.png">
@@ -14,6 +14,5 @@
 
       </div>
     </swiper-slide>
-
   </swiper-container>
 </div>
