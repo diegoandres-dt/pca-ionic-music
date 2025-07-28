@@ -3,13 +3,13 @@
   <swiper-container slides-per-view="1.8" centered-slides="false" space-between="10" grab-cursor="true" loop="false">
     <swiper-slide *ngFor="let item of listaSlidesArtista; let i = index">
       <div class="div-principal-artista">
-        <img class="img-artista" src="../../../assets/img/37.jpg">
+        <img class="img-artista" [src]="item.image"  (error)="reemplazarImagenPorDefecto($event)" alt="Artista">
         <div class="contenido-opacidad">
         <img class="opacidad-img-artista" src="./../../../assets/img/bg_artista.png">
         </div>
         <div class="contenido-texto-artista">
-          <ion-label class="titulo-artista">shakira</ion-label>
-          <ion-label class="seguidores-artista">1800 sequidores</ion-label>
+          <ion-label class="titulo-artista">{{item.name}}</ion-label>
+          <ion-label class="seguidores-artista">{{item.followers}} seguidores</ion-label>
         </div>
 
       </div>

@@ -2,15 +2,15 @@
   <swiper-container slides-per-view="1.20" centered-slides="false" space-between="10" grab-cursor="true" loop="false">
     <swiper-slide *ngFor="let item of listaSlides; let i = index" >
       <div class="div-principal">
-        <ion-label class="titulo-slider">{{item.titulo}}</ion-label>
+        <ion-label class="titulo-slider">{{item.label}}</ion-label>
         <div class="div-contenedor" [style.background]="getColor(i)">
           <div class="div-imagen">
-            <img [src]="item.imagen" />
+            <img [src]="item.image" />
           </div>
           <div class="div-contenedor-lebel">
-            <ion-label>{{item.descripcion.album}}</ion-label>
-            <ion-label>{{item.descripcion.artista}}</ion-label>
-            <ion-label>{{item.descripcion.year}}</ion-label>
+            <ion-label>{{item.name}}</ion-label>
+            <ion-label>Total canciones {{item.total_tracks}}</ion-label>
+            <ion-label>{{item.release_date}}</ion-label>
           </div>
         </div>
       </div>

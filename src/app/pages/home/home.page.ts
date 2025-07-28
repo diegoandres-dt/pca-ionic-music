@@ -8,25 +8,33 @@ import { Router } from '@angular/router';
 import { ellipsisVertical } from 'ionicons/icons';
 import { SliderArtistaComponent } from 'src/app/components/slider-artista/slider-artista.component';
 import { ArtistService } from 'src/app/services/artist.service';
-import { HttpClientModule } from '@angular/common/http'; 
+import { AlbumService } from 'src/app/services/album.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
-  imports: [IonicModule, CommonModule, MiSliderComponent,SliderArtistaComponent,HttpClientModule],
+  imports: [IonicModule, CommonModule, MiSliderComponent,SliderArtistaComponent],
 })
 export class HomePage {
   tipoModo = 'Cambiar a modo Oscuro';
   isDarkMode = false;
+  objetoArtista:any[]=[];
+  objetoAlbum:any[]=[];
 
-  constructor(private router: Router, private artistService:ArtistService) {
+  constructor(private router: Router, private artistService:ArtistService, private albumService:AlbumService) {
     addIcons({ library, playCircle, search, ellipsisVertical });
   }
 
    ngOnInit() {
     this.artistService.listarArtista().subscribe((data) => {
       console.log(data);
+      this.objetoArtista=data;
+    });
+
+    this.albumService.listarAlbum().subscribe((data) => {
+      console.log(data);
+      this.objetoAlbum=data;
     });
 
    }
