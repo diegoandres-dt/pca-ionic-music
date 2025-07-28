@@ -11,6 +11,7 @@ import { ArtistService } from 'src/app/services/artist.service';
 import { AlbumService } from 'src/app/services/album.service';
 import { ModalController } from '@ionic/angular';
 import { ModalInfoComponent } from 'src/app/components/modal-info/modal-info.component';
+import { exitOutline, invertModeOutline, albumsOutline } from 'ionicons/icons';
 
 @Component({
   selector: 'app-home',
@@ -26,7 +27,7 @@ export class HomePage {
   isModalOpen: boolean = false;
   verArtista:any;
   constructor(private router: Router, private artistService: ArtistService, private albumService: AlbumService, private modalCtrl: ModalController) {
-    addIcons({ library, playCircle, search, ellipsisVertical });
+   addIcons({ library, playCircle, search, ellipsisVertical, exitOutline, invertModeOutline, albumsOutline });
   }
 
 

@@ -49,9 +49,27 @@ body.dark {
   --ion-text-color: var(--ion-color-white);
   --ion-item-border-color: var(--ion-color-white);
 
-  /* Cambia 'red' por el color que prefieras */
   .input-wrapper {
     color: var(--ion-color-white)
+  }
+
+  .titulo-slider{
+    color: var(--ion-color-white) !important;
+  }
+
+  .icono-item{
+    color: var(--ion-color-white);
+  }
+
+  .contennido-menu-desplegable{
+    --background: rgb(22, 22, 22);
+    ion-item{
+      --background: rgb(22, 22, 22);
+    }
+  }
+
+  .menu-desplegable-toolbar{
+    --background: rgb(22, 22, 22);
   }
 
   .fondo-negro {

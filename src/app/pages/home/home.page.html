@@ -1,27 +1,62 @@
-<ion-header>
-  <ion-toolbar class="fondo-negro">
-    <ion-title>Diego de la Torre</ion-title>
-    <ion-button fill="clear" id="popover-button" slot="end"><ion-icon name="ellipsis-vertical"></ion-icon></ion-button>
-    <ion-popover trigger="popover-button" [dismissOnSelect]="true">
-      <ng-template>
-        <ion-content>
-          <ion-list>
-            <ion-item (click)="sendIntro()" [button]="true" [detail]="false">Ir a la Intro</ion-item>
-            <ion-item (click)="toggleDarkMode()" [button]="true" [detail]="false">{{tipoModo}}</ion-item>
-          </ion-list>
-        </ion-content>
-      </ng-template>
-    </ion-popover>
-  </ion-toolbar>
-</ion-header>
-<ion-content>
-  <div class="contenedor-principal">
-    <app-mi-slider [listaSlides]="objetoAlbum"></app-mi-slider>
-    <ion-button (click)="sendDetail()">Ir al detalle</ion-button>
-    <app-slider-artista (datosAlPadre)="detalleArtista($event)" [listaSlidesArtista]="objetoArtista"></app-slider-artista>
-    <app-modal-info [infoArtista]="verArtista" (isModalOpenEmitter)="cerrarModal($event)" *ngIf="isModalOpen"></app-modal-info>
-    <ion-button expand="block" (click)="abrirModal()">
-      Abrir Modal
-    </ion-button>
-  </div>
-</ion-content>
+<ion-menu contentId="main-content">
+  <ion-header>
+    <ion-toolbar class="menu-desplegable-toolbar">
+      <ion-buttons slot="start">
+        <img class="logo-menu-desplegable" src="../../../assets/img/logo_vibra.png" alt="Logo" />
+      </ion-buttons>
+      <ion-title class="titulo-menu-desplegable">Vibra</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="contennido-menu-desplegable">
+    <ion-list>
+      <ion-item lines="none" (click)="sendIntro()">
+        <ion-icon name="albums-outline" class="icono-item"></ion-icon>
+        <ion-label>Ver Introducción</ion-label>
+      </ion-item>
+      <ion-item lines="none" (click)="toggleDarkMode()">
+        <ion-icon name="invert-mode-outline" class="icono-item"></ion-icon>
+        <ion-label>{{tipoModo}}</ion-label>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-icon name="exit-outline" class="icono-item"></ion-icon>
+        <ion-label>Cerrar Sesión</ion-label>
+      </ion-item>
+    </ion-list>
+    <ion-label class="footer-menu-desplegable">Siente cada nota, vive cada Vibra.</ion-label>
+  </ion-content>
+</ion-menu>
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar class="fondo-negro">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Diego de la Torre</ion-title>
+      <ion-button fill="clear" id="popover-button" slot="end"><ion-icon
+          name="ellipsis-vertical"></ion-icon></ion-button>
+      <ion-popover trigger="popover-button" [dismissOnSelect]="true">
+        <ng-template>
+          <ion-content>
+            <ion-list>
+              <ion-item (click)="sendIntro()" [button]="true" [detail]="false">Ir a la Intro</ion-item>
+              <ion-item (click)="toggleDarkMode()" [button]="true" [detail]="false">{{tipoModo}}</ion-item>
+            </ion-list>
+          </ion-content>
+        </ng-template>
+      </ion-popover>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <div class="contenedor-principal">
+      <app-mi-slider [listaSlides]="objetoAlbum"></app-mi-slider>
+      <ion-button (click)="sendDetail()">Ir al detalle</ion-button>
+      <app-slider-artista (datosAlPadre)="detalleArtista($event)"
+        [listaSlidesArtista]="objetoArtista"></app-slider-artista>
+      <app-modal-info [infoArtista]="verArtista" (isModalOpenEmitter)="cerrarModal($event)"
+        *ngIf="isModalOpen"></app-modal-info>
+      <ion-button expand="block" (click)="abrirModal()">
+        Abrir Modal
+      </ion-button>
+    </div>
+  </ion-content>
+</div>
