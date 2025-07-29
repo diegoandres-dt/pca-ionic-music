@@ -42,7 +42,6 @@ export class LoginPage implements OnInit {
     if (this.loginForm.valid) {
         const password = this.loginForm.get('password')?.value;
         const email = this.loginForm.get('email')?.value;
-        console.log('password', password);
         let user: any = {
           user: {
             "email": email,
@@ -52,7 +51,6 @@ export class LoginPage implements OnInit {
         this.isLoading = true;
         this.authenticatorService.login(user).subscribe({
           next: (data) => {
-            console.log(data);
             this.tipoSnack = 'success';
             this.tituloSnack = '¡Logueado con éxito!';
             this.mensajeSnack = 'Bienvenido a Vibra, disfruta de la mejor música ';
@@ -78,7 +76,6 @@ export class LoginPage implements OnInit {
           }
         });
       } else {
-        console.log('Formulario inválido');
         this.loginForm.markAllAsTouched();
       }
   }

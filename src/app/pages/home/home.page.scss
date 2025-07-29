@@ -151,3 +151,11 @@ ion-alert ::ng-deep .alert-message {
 .subtitulo-artista {
   margin: 18px 0px 10px;
 }
+
+.item-favorito-icon{
+  cursor: pointer;
+}
+
+.item-favorito-icon:hover{
+  opacity: 0.8;
+}

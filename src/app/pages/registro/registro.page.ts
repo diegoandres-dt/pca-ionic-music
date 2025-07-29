@@ -60,7 +60,6 @@ export class RegistroPage implements OnInit {
       this.isLoading = true;
       this.authenticatorService.registro(user).subscribe({
         next: (data) => {
-          console.log(data);
           this.tipoSnack = 'success';
           this.tituloSnack = '¡Registrado con éxito!';
           this.mensajeSnack = 'Ingrese las credenciales para continuar ';
@@ -86,7 +85,6 @@ export class RegistroPage implements OnInit {
         }
       });
     } else {
-      console.log('Formulario inválido');
       this.registroForm.markAllAsTouched();
     }
   }

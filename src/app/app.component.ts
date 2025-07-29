@@ -15,7 +15,6 @@ export class AppComponent {
 
   ngOnInit() {
     const hasSeenIntro = localStorage.getItem('intro');
-    console.log("hasSeenIntro", hasSeenIntro);
     if (hasSeenIntro === 'true') {
       const hasLogin = localStorage.getItem('login');
       if (hasLogin === 'true') {

@@ -53,7 +53,6 @@ export class ReproductorFooterComponent implements OnInit {
     }
 
     this.isPlaying = !this.isPlaying;
-    console.log("this.isPlaying", this.isPlaying);
   }
 
 

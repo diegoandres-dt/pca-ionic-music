@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { addIcons } from 'ionicons';
-import { library, playCircle, search } from 'ionicons/icons';
+import { library, playCircle, search, heart } from 'ionicons/icons';
 import { MiSliderComponent } from 'src/app/components/mi-slider/mi-slider.component';
 import { Router } from '@angular/router';
 import { ellipsisVertical } from 'ionicons/icons';
@@ -14,6 +14,7 @@ import { IonAlert, IonModal, IonIcon, IonItem, IonList, IonLabel, IonMenuButton,
 import { OverlayEventDetail } from '@ionic/core/components';
 import { TracksServiceService } from 'src/app/services/tracks-service.service';
 import { ReproductorFooterComponent } from 'src/app/components/reproductor-footer/reproductor-footer.component';
+import { FovoritosService } from 'src/app/services/fovoritos.service';
 
 
 @Component({
@@ -42,7 +43,6 @@ export class HomePage {
       text: 'Cancelar',
       role: 'cancel',
       handler: () => {
-        console.log('Alert canceled');
       },
     },
     {
@@ -62,19 +62,18 @@ export class HomePage {
     followers: ''
   };
 
-  constructor(private router: Router, private artistService: ArtistService, private albumService: AlbumService, private tracksService: TracksServiceService) {
-    addIcons({ library, playCircle, search, ellipsisVertical, exitOutline, invertModeOutline, albumsOutline, star, play, shuffle, cloudDownloadOutline, heartOutline });
+  constructor(private router: Router, private artistService: ArtistService, private albumService: AlbumService, private tracksService: TracksServiceService, private fovoritosService: FovoritosService) {
+    addIcons({ library, playCircle, search, ellipsisVertical, exitOutline, invertModeOutline, albumsOutline, star, play, shuffle, cloudDownloadOutline, heartOutline, heart });
   }
+
 
 
   ngOnInit() {
     this.artistService.listarArtista().subscribe((data) => {
-      console.log(data);
       this.objetoArtista = data;
     });
 
     this.albumService.listarAlbum().subscribe((data) => {
-      console.log(data);
       this.objetoAlbum = data;
     });
 
@@ -107,26 +106,21 @@ export class HomePage {
   }
 
   sendDetail(e: any) {
-    console.log(e);
     this.router.navigate(['tabs/album-detail'])
   }
 
   cerrarModal(event: any) {
-    console.log("hola", event)
     this.isModalOpen = event;
   }
 
   detalleArtista(event: any) {
-    console.log(event)
     this.artistService.verArtista(event.id).subscribe((data) => {
-      console.log(data);
       this.verArtista = data;
       const openModalBtn = document.getElementById('open-modal');
       if (openModalBtn) {
         openModalBtn.click();
       }
       this.tracksService.verMusica(this.verArtista.id).subscribe((data) => {
-        console.log(data);
         this.objetoDisco = data;
       });
 
@@ -146,8 +140,18 @@ export class HomePage {
   }
 
   setResult(event: CustomEvent<OverlayEventDetail>) {
-    console.log(`Dismissed with role: ${event.detail.role}`);
 
+  }
+
+  toggleFavorito(id: number) {
+    const nuevosIds = this.fovoritosService.toggleId(id);
+  }
+  existeFavorito(id:number):boolean {
+    if (this.fovoritosService.idExiste(id)) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
 }

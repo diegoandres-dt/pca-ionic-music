@@ -27,12 +27,10 @@ export class ModalInfoComponent implements OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['infoArtista'] && changes['infoArtista'].currentValue) {
       this.infoArtista = changes['infoArtista'].currentValue;
-      console.log("coma mierda", this.infoArtista)
     }
   }
 
   cerrar() {
-    console.log("cerrar")
     this.isModalOpenEmitter.emit(false);
     this.modalCtrl.dismiss();
   }

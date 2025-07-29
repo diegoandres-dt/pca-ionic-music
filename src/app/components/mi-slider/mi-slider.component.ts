@@ -33,7 +33,6 @@ export class MiSliderComponent implements OnInit {
   }
 
   enviarDatosSlider(item: any) {
-    console.log("item", item);
     this.datosAlPadreSlider.emit(item);
   }
 
