@@ -1,18 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
+import { IonicModule } from "@ionic/angular";
+import { addIcons } from 'ionicons';
+import { musicalNotes, create, albums, musicalNote} from 'ionicons/icons';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 @Component({
   selector: 'app-library',
   templateUrl: './library.page.html',
   styleUrls: ['./library.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
+  imports: [CommonModule, FormsModule,IonicModule],
+   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class LibraryPage implements OnInit {
 
-  constructor() { }
+  constructor() {
+    addIcons({musicalNotes, create, albums, musicalNote  });
+   }
 
   ngOnInit() {
   }

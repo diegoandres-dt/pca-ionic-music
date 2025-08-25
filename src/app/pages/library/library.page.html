@@ -1,8 +1,67 @@
-<ion-header>
-  <ion-toolbar class="fondo-negro">
-    <ion-title>Library</ion-title>
-  </ion-toolbar>
-</ion-header>
-<ion-content>
-  <div class="example-content">Library content</div>
-</ion-content>
+<div class="backgraud-library">
+  <div class="contenedor-principal-library">
+    <h1>Library</h1>
+
+    <ion-list >
+      <ion-item detail="true">
+        <ion-icon slot="start" name="musical-notes" color="danger"></ion-icon>
+        <ion-label>Playlists</ion-label>
+      </ion-item>
+
+      <ion-item detail="true">
+        <ion-icon slot="start" name="create" color="danger"></ion-icon>
+        <ion-label>Artists</ion-label>
+      </ion-item>
+
+      <ion-item detail="true">
+        <ion-icon slot="start" name="albums" color="danger"></ion-icon>
+        <ion-label>Albums</ion-label>
+      </ion-item>
+
+      <ion-item detail="true">
+        <ion-icon slot="start" name="musical-note" color="danger"></ion-icon>
+        <ion-label>Songs</ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <div class="recently-added">
+  <h2>Recently Added</h2>
+
+  <swiper-container
+    slides-per-view="2"
+    space-between="15"
+    free-mode="true"
+  >
+    <swiper-slide>
+      <div class="album-card">
+        <img src="../../../assets/img/35.jpg" />
+        <div class="info">
+          <label class="title">New Retro Wave</label>
+          <label class="subtitle">Steven Falcon</label>
+        </div>
+      </div>
+    </swiper-slide>
+
+    <swiper-slide>
+      <div class="album-card">
+        <img src="../../../assets/img/36.jpg" />
+        <div class="info">
+          <label class="title">Progressive Metal Ess...</label>
+          <label class="subtitle">Alexey Kolpikov</label>
+        </div>
+      </div>
+    </swiper-slide>
+
+    <swiper-slide>
+      <div class="album-card">
+        <img src="../../../assets/img/37.jpg" />
+        <div class="info">
+          <label class="title">Indie Hits</label>
+          <label class="subtitle">Various Artists</label>
+        </div>
+      </div>
+    </swiper-slide>
+  </swiper-container>
+</div>
+</div>

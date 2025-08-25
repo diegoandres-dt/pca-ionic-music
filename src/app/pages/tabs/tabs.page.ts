@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { IonIcon, IonTabBar, IonTabButton, IonTabs} from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { library, playCircle, radio, searchOutline, playOutline, fileTrayFullOutline } from 'ionicons/icons';
+import { PlayerComponent } from "src/app/components/player/player.component";
 
 
 
@@ -12,7 +13,7 @@ import { library, playCircle, radio, searchOutline, playOutline, fileTrayFullOut
   templateUrl: './tabs.page.html',
   styleUrls: ['./tabs.page.scss'],
   standalone: true,
-  imports: [ IonIcon, IonTabBar, IonTabButton,IonTabs, CommonModule, FormsModule]
+  imports: [IonIcon, IonTabBar, IonTabButton, IonTabs, CommonModule, FormsModule, PlayerComponent]
 })
 export class TabsPage implements OnInit {
 

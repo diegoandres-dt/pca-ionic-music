@@ -1,0 +1,53 @@
+<div #playerContainer class="player-wrapper" [class.expanded]="isExpanded">
+
+  <!-- Vista minimizada -->
+  <div *ngIf="!isExpanded" class="player-minimized" (click)="toggleExpand()">
+    <img src="../../../assets/img/35.jpg" alt="Album Cover" class="album-thumb" />
+    <div class="song-info-mini">
+      <h3>Forever Outsider</h3>
+      <p>Evergrey</p>
+    </div>
+    <ion-icon [name]="isPlaying ? 'pause' : 'play'" size="small" (click)="togglePlay(); $event.stopPropagation()"></ion-icon>
+  </div>
+
+  <!-- Vista expandida -->
+  <ion-content *ngIf="isExpanded" class="player-container" fullscreen>
+    <div class="player-content">
+      <ion-button (click)="toggleExpand()">hola</ion-button>
+      <img src="../../../assets/img/35.jpg" alt="Album Cover" class="album-art" />
+
+      <div class="song-info-row">
+        <div class="song-info">
+          <h2>Forever Outsider</h2>
+          <p>Evergrey</p>
+        </div>
+        <ion-icon name="ellipsis-vertical" class="options-icon"></ion-icon>
+      </div>
+
+      <div class="progress-container">
+        <span>{{ formatTime(currentTime) }}</span>
+        <ion-range [value]="currentTime" [min]="0" [max]="duration"
+                   (ionChange)="updateProgress($event)" class="progress-bar"></ion-range>
+        <span>{{ formatTime(duration) }}</span>
+      </div>
+
+      <div class="controls">
+        <ion-icon name="play-back" size="large"></ion-icon>
+        <ion-icon [name]="isPlaying ? 'pause' : 'play'" size="large" (click)="togglePlay()"></ion-icon>
+        <ion-icon name="play-forward" size="large"></ion-icon>
+      </div>
+
+      <div class="volume-container">
+        <ion-icon name="volume-off"></ion-icon>
+        <ion-range [value]="volume" (ionChange)="updateVolume($event)" class="volume-slider"></ion-range>
+        <ion-icon name="volume-high"></ion-icon>
+      </div>
+
+      <div class="footer-icons">
+        <ion-icon name="musical-note" size="small"></ion-icon>
+        <ion-icon name="radio" size="small"></ion-icon>
+        <ion-icon name="albums" size="small"></ion-icon>
+      </div>
+    </div>
+  </ion-content>
+</div>
