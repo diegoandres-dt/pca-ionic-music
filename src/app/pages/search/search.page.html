@@ -1,8 +1,14 @@
-<ion-header>
-  <ion-toolbar class="fondo-negro">
-    <ion-title>Search</ion-title>
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-icon slot="icon-only" name="person-circle"></ion-icon>
+    </ion-buttons>
+    <ion-title>Buscar</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-searchbar showCancelButton="focus" class="custom"></ion-searchbar>
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <div class="example-content">Search content</div>
+  <app-mi-search></app-mi-search>
 </ion-content>

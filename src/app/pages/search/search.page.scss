@@ -1,0 +1,20 @@
+ion-toolbar{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+ion-searchbar.custom {
+    --background: var(--ion-color-white);
+    --color: #635b5b;
+    --placeholder-color: #635b5b;
+    --icon-color: #121212ff;
+    --clear-button-color: #121212;
+    --border-radius: 6px;
+}
+
+ion-searchbar.ios.custom {
+    --cancel-button-color: #19422d;
+}
+
+ion-searchbar.md.custom {
+    --cancel-button-color: #121212;
+}

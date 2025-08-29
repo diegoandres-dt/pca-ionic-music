@@ -1,0 +1,25 @@
+<div class="contenedor-principal-search">
+  <div class="contenido-search">
+    <h2>Descubre algo nuevo para ti</h2>
+
+    <div class="cards-container">
+      <div class="card" *ngFor="let item of items">
+        <img [src]="item.image" alt="cover" />
+        <div class="overlay">
+          <span>{{ item.title }}</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="contenido-explorar">
+    <h2>Explorar todo</h2>
+
+    <div class="card-explorar">
+      <div class="card-img" *ngFor="let category of categories" [style.background]="category.color">
+        <h3 [innerText]="category.title"></h3>
+        <img [src]="category.image" alt="">
+      </div>
+    </div>
+  </div>
+</div>

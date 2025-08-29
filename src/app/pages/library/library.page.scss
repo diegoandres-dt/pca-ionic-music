@@ -1,14 +1,11 @@
-.backgraud-library{
-    background: var(--ion-color-darkblack);
-    
+.contenedor-principal-library {
+  padding-bottom: 74px;
 }
 
-.contenedor-principal-library {
-  background: #000;
+.contenido-list {
   padding-left: 15px;
 
   h1 {
-    color: #fff;
     font-size: 30px;
     font-weight: bold;
     margin-bottom: 10px;
@@ -20,12 +17,9 @@
 
   ion-item {
     --background: transparent;
-    --color: #fff;
-    --detail-icon-color: #fff; 
     font-size: 18px;
     --padding-start: 0;
     --inner-padding-start: 0;
-    --border-color: #333;
     --border-width: 0 0 0.5px 0;
     --inner-border-width: 0;
 
@@ -38,8 +32,8 @@
 
 .recently-added {
   padding: 15px;
-  h2{
-    color: #fff;
+
+  h2 {
     font-size: 18px;
     margin-bottom: 12px;
   }
@@ -54,7 +48,6 @@ swiper-container {
 .album-card {
   display: flex;
   flex-direction: column;
-  color: #fff;
 }
 
 .album-card img {
@@ -69,7 +62,6 @@ swiper-container {
 .album-card .title {
   display: block;
   font-size: 14px;
-  color: #fff;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
