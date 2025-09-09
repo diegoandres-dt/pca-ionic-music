@@ -2,6 +2,19 @@ ion-toolbar{
     padding-left: 10px;
     padding-right: 10px;
 }
+
+ion-avatar {
+  width: 32px;
+  height: 32px;
+  margin-right: 8px;
+}
+
+.header-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-left: 8px;
+}
+
 ion-searchbar.custom {
     --background: var(--ion-color-white);
     --color: #635b5b;

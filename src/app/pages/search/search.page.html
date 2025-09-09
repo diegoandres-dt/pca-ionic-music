@@ -1,14 +1,26 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
+
     <ion-buttons slot="start">
-      <ion-icon slot="icon-only" name="person-circle"></ion-icon>
+      <ion-avatar>
+        <img src="../../../assets/img/36.jpg" alt="Avatar" />
+      </ion-avatar>
+      <ion-label class="header-title">Buscar</ion-label>
     </ion-buttons>
-    <ion-title>Buscar</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button fill="clear">
+        <ion-icon slot="icon-only" name="camera-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
   </ion-toolbar>
+
   <ion-toolbar>
     <ion-searchbar showCancelButton="focus" class="custom"></ion-searchbar>
   </ion-toolbar>
 </ion-header>
+
 <ion-content>
   <app-mi-search></app-mi-search>
 </ion-content>
