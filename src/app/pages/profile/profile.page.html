@@ -1,0 +1,49 @@
+<ion-content [fullscreen]="true">
+  <div class="custon-img-profile">
+    <img [src]="imagen">
+    <div class="text-fotante">
+      <span>{{nombre}}</span>
+    </div>
+  </div>
+  <div class="content-segment">
+    <ion-segment value="estado" (ionChange)="segmentChanged($event)">
+      <ion-segment-button value="estado">
+        <ion-label>Estado</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="actividad">
+        <ion-label>Actividad</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+  <div class="profile-content">
+    <ion-grid>
+      <ion-row *ngIf="selectedSegment === 'estado'">
+        <ion-col size="6" *ngFor="let stat of estadoStats">
+          <ion-card class="stat-card">
+            <ion-card-content>
+              <ion-icon [name]="stat.icon" class="stat-icon" [style.color]="stat.color"></ion-icon>
+              <div class="texto-profile">
+                <h3>{{ stat.value }}</h3>
+                <p>{{ stat.label }}</p>
+              </div>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+
+      <ion-row *ngIf="selectedSegment === 'actividad'">
+        <ion-col size="6" *ngFor="let stat of actividadStats">
+          <ion-card class="stat-card">
+            <ion-card-content>
+              <ion-icon [name]="stat.icon" class="stat-icon" [style.color]="stat.color"></ion-icon>
+              <div class="texto-profile">
+                <h3>{{ stat.value }}</h3>
+                <p>{{ stat.label }}</p>
+              </div>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>
