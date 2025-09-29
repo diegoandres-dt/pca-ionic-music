@@ -3,6 +3,7 @@ import { IonLabel } from "@ionic/angular/standalone";
 import { IonicModule } from "@ionic/angular";
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ArtistService } from 'src/app/services/artist.service';
 
 @Component({
   selector: 'app-slider-artista',
@@ -13,56 +14,34 @@ import { CommonModule } from '@angular/common';
 })
 export class SliderArtistaComponent  implements OnInit {
 
-   listaSlidesArtista = [
-    {
-      titulo: 'Popular Now',
-      imagen: '../../../assets/img/36.jpg',
-      descripcion: {
-        album: 'Blinding Lights',
-        artista: 'The Weeknd',
-        year: '2020'
-      }
-    },
-    {
-      titulo: 'Top Hit',
-      imagen: '../../../assets/img/37.jpg',
-      descripcion: {
-        album: 'Levitating',
-        artista: 'Dua Lipa',
-        year: '2021'
-      }
-    },
-    {
-      titulo: 'Fresh Release',
-      imagen: '../../../assets/img/35.jpg',
-      descripcion: {
-        album: 'As It Was',
-        artista: 'Harry Styles',
-        year: '2022'
-      }
-    },
-    {
-      titulo: 'Classic Vibes',
-      imagen: '../../../assets/img/36.jpg',
-      descripcion: {
-        album: 'Bohemian Rhapsody',
-        artista: 'Queen',
-        year: '1975'
-      }
-    },
-    {
-      titulo: 'New Discovery',
-      imagen: '../../../assets/img/37.jpg',
-      descripcion: {
-        album: 'Heat Waves',
-        artista: 'Glass Animals',
-        year: '2021'
-      }
-    }
-  ];
+   listaSlidesArtista:any[] = [];
 
-  constructor() { }
+  constructor(private artistService:ArtistService ) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.loadArtist();
+  }
+
+  loadArtist() {
+    this.artistService.listarArtistasPrincipales().subscribe({
+      next: (data) => {
+        console.log('✅ Datos recibidos:', data);
+        this.listaSlidesArtista = data.items;
+        //this.profile = data;
+      },
+      error: (err) => {
+        console.error('❌ Error al cargar perfil:', err);
+        //this.errorMessage = 'No se pudo cargar el perfil. Inténtalo de nuevo.';
+      },
+      complete: () => {
+        console.log('🎯 Petición finalizada');
+      }
+    });
+  }
+
+  verDetalleArtista(artista: any) {
+    console.log('🎤 Datos del artista seleccionado:', artista);
+  }
+
 
 }

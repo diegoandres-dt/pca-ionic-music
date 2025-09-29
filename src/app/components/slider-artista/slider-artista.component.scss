@@ -1,30 +1,43 @@
 .div-principal-artista {
     position: relative;
-
+    border-radius: 7px 7px 7px 7px;
+    height: 200px;
+    overflow: hidden;
 }
 
-.img-artista {}
+.img-artista {
+    border-radius: 7px 7px 7px 7px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
 
 .contenido-opacidad {
     position: absolute;
     z-index: 99;
     width: 100%;
-    bottom: 0px
+    bottom: 0px;
+    height: 100%;
 }
 
-.opacidad-img-artista {}
+.opacidad-img-artista {
+    border-radius: 0px 0px 7px 7px;
+}
 
 .titulo-artista {
-    width: 100%;
-    font-size: 16px;
-    font-weight: 500;
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+    color: #fff;
 
 }
 
 .seguidores-artista {
-    width: 100%;
-    font-size: 16px;
-    font-weight: 200;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.8);
+    /* gris suave */
+    margin: 0;
 }
 
 .contenido-texto-artista {
@@ -36,4 +49,11 @@
     padding: 0px 14px 20px;
     width: 100%;
     gap: 4px;
+}
+
+.titulo-seccion2 {
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 8px;
 }

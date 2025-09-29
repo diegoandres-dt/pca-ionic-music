@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { AlbumService } from 'src/app/services/album.service';
 
 
 
@@ -67,9 +68,27 @@ export class MiSliderComponent implements OnInit {
       }
     }
   ];
-  constructor() { }
+  constructor(private albumService:AlbumService) { }
 
-  ngOnInit() { }
+  ngOnInit() { 
+    this.loadAlbum();
+  }
+
+   loadAlbum() {
+    this.albumService.listarAlbum().subscribe({
+      next: (data) => {
+        console.log('✅ Datos recibidos:', data);
+        //this.profile = data;
+      },
+      error: (err) => {
+        console.error('❌ Error al cargar perfil:', err);
+        //this.errorMessage = 'No se pudo cargar el perfil. Inténtalo de nuevo.';
+      },
+      complete: () => {
+        console.log('🎯 Petición finalizada');
+      }
+    });
+  }
 
   getColor(index: number): string {
   const colores = ['#67343e', '#b3a20d', '#7283e6', '#4f5e83', '#8fca9aff'];

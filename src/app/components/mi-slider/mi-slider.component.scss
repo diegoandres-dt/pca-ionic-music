@@ -16,6 +16,17 @@ img {
   border-radius: 15px 15px 0px 0px;
 }
 
-.titulo-slider{
-  color: var(--ion-color-white) ;
+.titulo-seccion {
+  display: block;
+  font-size: 15px;
+  font-weight: 600;
+  margin: 4px 0;
+}
+
+.titulo-slider {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #6b6b6b;
+  text-align: left;
 }

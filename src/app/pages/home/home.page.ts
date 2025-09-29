@@ -25,10 +25,7 @@ export class HomePage {
   }
 
    ngOnInit() {
-    this.artistService.listarArtista().subscribe((data) => {
-      console.log(data);
-    });
-
+  
    }
 
 

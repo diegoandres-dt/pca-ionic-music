@@ -5,12 +5,11 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class ArtistService {
+export class AlbumService {
 
   constructor(private gatewayServices: GatewayService) { }
 
-  public listarArtistasPrincipales(): Observable<any> {
-    return this.gatewayServices.get<any>(`/me/top/artists?time_range=short_term&limit=15`);
+  public listarAlbum(): Observable<any> {
+    return this.gatewayServices.get<any>(`/me/albums`);
   }
 }
-

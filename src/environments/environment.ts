@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  urlVibra:"https://music.fly.dev/"
+  urlVibra:"https://api.spotify.com/v1"
 };
 
 /*
